@@ -3,7 +3,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+// const dns = require("node:dns/promises");
+// dns.setServers(["1.1.1.1", "0.0.0.0"]);
 const app = express();
 
 // Middleware
@@ -432,6 +433,6 @@ app.get("/api/leaderboard", async (req, res) => {
 });
 
 const PORT = 5000;
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
